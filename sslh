@@ -1,4 +1,33 @@
 
+#Konfigurasikan SSLH
+
+Setelah kita , berhasil install program sslh di dalam server debian / ubuntu dan mengkosongkan port yang ingin digunakan
+
+kita bisa, mengedit file konfigurasi SSLH seperti di bawah ini
+
+    nano /etc/default/sslh
+
+kemudian cari kode di bawah ini
+
+    RUN = no Ubah menjadi RUN = yes
+
+Kemudian, gulirkan sedikit ke bawah dan modifikasi baris berikut
+
+misalnya kita menggunakan port 443 untuk program sslh kita , jadi kita bisa mengedit seperti di bawah ini
+
+    DAEMON_OPTS = "- pengguna sslh --listen 0.0.0.0:443 ---openvpn 127.0.0.1:1194 -ssh 127.0.0.1:22 --ssl 127.0.0.1:777 --pidfile /var/run/sslh/sslh.pid"
+
+Keterangan konfigurasi SSLH
+
+    –user sslh: Harus dijalankan di bawah nama pengguna yang ditentukan ini.
+    –listen 0.0.0.0:443: SSLH menggunakan pada port 443 pada semua antarmuka yang tersedia.
+    –ssh 127.0.0.1:22: Rute traffic SSH/Dropbear ke port 22
+    –ssl 127.0.0.1:777: Rute HTTPS / lalu lintas SSL/TLS  ke port 777
+    –ssl 127.0.0.1:1194: RuteOpenVPN ke port 1194
+
+    kemudian save dan simpan dengan cara , CTRL + O , enter
+    dan Exit dengan cara CTRL + X
+
 
 Reference:
 - https://www.rutschle.net/tech/sslh/README.html
