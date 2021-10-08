@@ -35,3 +35,5 @@ Reference:
 - https://www.rutschle.net/tech/sslh/doc/FAQ
 - https://www.rutschle.net/tech/sslh/doc/INSTALL
 - https://hidessh.com/blog/penggunaan-port-sslh/#Scirpt_Auto_Installer_SSLH_Debian_UBuntu
+- https://github.com/yrutschle/sslh/blob/master/doc/tproxy.md
+- https://github.com/yrutschle/sslh/blob/master/doc/config.md
